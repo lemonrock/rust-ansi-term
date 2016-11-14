@@ -231,6 +231,10 @@ where <S as ToOwned>::Owned: std::fmt::Debug {
         try!(w.write_str(&self.string));
         self.style.write_suffix(w)
     }
+    
+	fn make_plain(&mut self) {
+        self.style = Style::default();
+    }
 }
 
 /// An ANSI String is a string coupled with the Style to display it
