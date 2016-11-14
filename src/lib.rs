@@ -232,7 +232,8 @@ where <S as ToOwned>::Owned: std::fmt::Debug {
         self.style.write_suffix(w)
     }
     
-	fn make_plain(&mut self) {
+	/// Enables downstream libraries to remove styles
+	pub fn make_plain(&mut self) {
         self.style = Style::default();
     }
 }
